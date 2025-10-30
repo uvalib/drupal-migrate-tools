@@ -1,10 +1,10 @@
 #
 #
 #
-FROM public.ecr.aws/docker/library/alpine:3.20
+FROM public.ecr.aws/docker/library/alpine:3.22
 
 # Add necessary packages
-RUN apk --update add bash tzdata mariadb-client postgresql-client ca-certificates aws-cli rsync && rm -fr /var/cache/apk/*
+RUN apk --update add bash tzdata mariadb-client postgresql-client mariadb-connector-c-dev ca-certificates aws-cli rsync && rm -fr /var/cache/apk/*
 
 # allow docker passwordless sudo
 #RUN echo "docker ALL=NOPASSWD: ALL" > /etc/sudoers.d/docker
