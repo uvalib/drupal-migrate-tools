@@ -15,8 +15,8 @@ ensure_tool_available ${DUMP_TOOL}
 COMPRESS_TOOL=gzip
 ensure_tool_available ${COMPRESS_TOOL}
 
-DUMP_OPTIONS="--flush-privileges --routines"
-RESTORE_OPTIONS=""
+DUMP_OPTIONS="--flush-privileges --routines --skip-ssl"
+RESTORE_OPTIONS="--skip-ssl"
 
 # validate the environment
 ensure_var_defined "${DBHOST}" "DBHOST"

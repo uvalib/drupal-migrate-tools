@@ -17,8 +17,8 @@ ensure_tool_available ${RESTORE_TOOL}
 COMPRESS_TOOL=gzip
 ensure_tool_available ${COMPRESS_TOOL}
 
-DUMP_OPTIONS="--flush-privileges --routines --single-transaction --skip-lock-tables"
-RESTORE_OPTIONS="-A"
+DUMP_OPTIONS="--flush-privileges --routines --single-transaction --skip-lock-tables --skip-ssl"
+RESTORE_OPTIONS="-A --skip-ssl"
 
 # validate the source environment
 ensure_var_defined "${SRC_DBHOST}" "SRC_DBHOST"
